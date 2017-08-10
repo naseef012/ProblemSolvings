@@ -39,8 +39,9 @@ public class GraphImplementation
         {
             s = queue.poll();
             System.out.print (s+ " ");
+
             Iterator<Integer> i = graph[s].listIterator();
-            while (!i.hasNext())
+            while (i.hasNext())
             {
                 int n = i.next();
                 if (!visited[n])
@@ -51,6 +52,19 @@ public class GraphImplementation
             }
         }
 
+    }
+
+    public static void main(String[] args)
+    {
+        GraphImplementation g = new GraphImplementation(4);
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        g.BFS(2);
     }
 
 
