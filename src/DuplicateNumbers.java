@@ -30,7 +30,7 @@ public class DuplicateNumbers
         for (int s: arr)
         {
             Integer count = map.get(s);
-            if(count==null)
+            if(count == null)
             {
                 map.put(s,1);
             }
@@ -42,8 +42,8 @@ public class DuplicateNumbers
 
        for (Map.Entry m : map.entrySet())
        {
-           int c =(int) m.getValue();
-           if (c>1)
+           Integer c = (int)m.getValue();
+           if (c > 1)
            {
                System.out.println("duplicate "+ m.getKey());
            }
