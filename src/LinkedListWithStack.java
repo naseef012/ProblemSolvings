@@ -8,6 +8,11 @@ public class LinkedListWithStack
     private Node top;
     private int size;
 
+    public int getSize()
+    {
+        return size;
+    }
+
     public boolean isEmpty()
     {
         return top == null;
@@ -45,7 +50,7 @@ public class LinkedListWithStack
         else
         {
             Node ptr = top;
-            while (ptr.getNext()!=null)
+            while (ptr!=null)
             {
                 System.out.println(ptr.getData());
                 ptr = ptr.getNext();
@@ -64,6 +69,7 @@ public class LinkedListWithStack
             {
                 Node temp = top;
                 top = temp.getNext();
+                size--;
                 return temp;
             }
         }
@@ -76,6 +82,7 @@ public class LinkedListWithStack
                 {
                     Node deletedNode = ptr.getNext();
                     ptr.setNext(ptr.getNext().getNext());
+                    size--;
                     return deletedNode;
                 }
                 count++;
@@ -94,10 +101,11 @@ public class LinkedListWithStack
             ls.push(i);
             i++;
         }
-
-       // ls.display();
-        ls.delete(0);
         ls.display();
+        System.out.println("Size before deletion: "+ls.getSize());
+        ls.delete(5);
+        ls.display();
+        System.out.println("Size AFTER deletion: "+ls.getSize());
     }
 }
 
