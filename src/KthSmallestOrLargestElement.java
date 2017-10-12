@@ -20,7 +20,7 @@ public class KthSmallestOrLargestElement
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
         System.out.println("The "+index+"th smallest number is "+arr[index-1]);
-        System.out.println("The "+index+"th largest number is "+arr[(arr.length-1) - (index-1)]);
+        System.out.println("The "+index+"th largest number is "+arr[arr.length - index]);
     }
 
     public static void main(String[] args)
