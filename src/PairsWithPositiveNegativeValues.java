@@ -39,7 +39,7 @@ public class PairsWithPositiveNegativeValues
         List<Integer> finalList = new ArrayList<>();
 
         /*
-            Storing the absolute values of the array elements
+         Storing the absolute values of the array elements
          */
         for (int i=0;i<array.length;i++)
         {
@@ -47,7 +47,7 @@ public class PairsWithPositiveNegativeValues
         }
 
         /*
-            Sorting the List containing the absolute array elements
+         Sorting the List containing the absolute array elements
          */
         Collections.sort(li);
 
@@ -86,16 +86,16 @@ public class PairsWithPositiveNegativeValues
         }
 
         /*
-        Declaring an array which is twice the size of the "finalList" since this array will contain both
-        the postive and negative numbers.
+         Declaring an array which is twice the size of the "finalList" since this array will contain both
+         the positive and negative numbers.
          */
        int finalArray[] =new int[finalList.size() * 2];
 
        int k=0; //Counter for array iterator
 
         /*
-        Here we are storing the negative of an finalList element in the array followed by the
-        postive value.
+         Here we are storing the negative of an finalList element in the array followed by the
+         positive value.
          */
        for (int i = 0; i<finalList.size();i++)
        {
@@ -109,11 +109,36 @@ public class PairsWithPositiveNegativeValues
     }
     public static void main(String[] args)
     {
-        int arr[] = {5,6,-6,7,8,-5,-7};
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter Number of Test Cases: ");
+        int testCases = s.nextInt();
 
-        System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(PairsWithPositiveNegativeValues.pairFind(arr)));
+        /*
+         Taking input from the user.
+         */
+        for (int i=0;i<testCases;i++)
+        {
+            System.out.println("Enter Array Length: ");
+            int arrayLength = s.nextInt();
+            int arr[] = new int[arrayLength];
+            for (int j=0;j<arrayLength;j++)
+            {
+                System.out.println("Element "+(j+1));
+                arr[j] = s.nextInt();
+            }
+            System.out.println("The Array which is just input: "+ Arrays.toString(arr));
 
+            int arr2[] = PairsWithPositiveNegativeValues.pairFind(arr);
 
+            if (arr2.length!=0)
+            {
+                System.out.println("The Pairs With Positive/Negative pairs: "+Arrays.toString(arr2));
+            }
+            else
+            {
+                System.out.println("The Pairs With Positive/Negative pairs is 0");
+            }
+            System.out.println(" ");
+        }
     }
 }
