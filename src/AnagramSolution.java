@@ -8,7 +8,13 @@ import java.util.Scanner;
  */
 public class AnagramSolution
 {
-
+    /**
+     * This method takes the character count arrays of both the strings and finds the difference between them.
+     * @param charCount1 -> is the number of occurrences of the words in the string 1
+     * @param charCount2 -> is the number of occurrences of the words in the string 2
+     *
+     * @return the difference between them.
+     */
     public static int getDelta(int []charCount1,int[]charCount2)
     {
         if (charCount1.length!=charCount2.length)
@@ -23,12 +29,17 @@ public class AnagramSolution
         return delta;
     }
 
-    public static int[] getCharCount(String s)
+    /**
+     * This Method returns an integer array which contains the occurrence number of all the characters in the str
+     * @param str
+     * @return an array which contains the number of occurrences of every word of the string
+     */
+    public static int[] getCharCount(String str)
     {
         int [] charCount =new int[26];
-        for (int i=0;i<s.length();i++)
+        for (int i=0;i<str.length();i++)
         {
-            char c = s.charAt(i);
+            char c = str.charAt(i);
             int offset = (int)'a';
             //System.out.println("Offset = "+offset);
             int code = c-offset;
@@ -37,12 +48,24 @@ public class AnagramSolution
         }
         return charCount;
     }
+
+    /**
+     * This Method takes in both the strings and finds out the number of changes needed for them to be complete anagrams
+     * @param s1
+     * @param s2
+     * @return Number of changes needed to make them anagrams.
+     */
     public static int numberNeeded(String s1, String s2)
     {
         int [] charCount1 = getCharCount(s1);
         int [] charCount2 = getCharCount(s2);
         return getDelta(charCount1,charCount2);
     }
+
+    /**
+     *  The main method
+     * @param args
+     */
     public static void main(String[] args)
     {
         Scanner sd = new Scanner(System.in);
