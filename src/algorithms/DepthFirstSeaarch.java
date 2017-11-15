@@ -1,4 +1,4 @@
-import sun.awt.image.ImageWatched;
+package algorithms;
 
 import java.util.Iterator;
 import java.util.LinkedList;

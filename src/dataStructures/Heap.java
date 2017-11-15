@@ -1,9 +1,11 @@
+package dataStructures;
+
 import java.util.Arrays;
 
 /**
  * Created By Naseef M Abdus Sattar on 10/2/2017 at 12:54 PM
  *
- * This is a Minimum Heap Implementation
+ * This is a Minimum dataStructures.Heap Implementation
  */
 public class Heap
 {
@@ -16,10 +18,12 @@ public class Heap
     {
         return (2 * parentIndex + 1);
     }
+
     private int getRightChildIndex(int parentIndex)
     {
         return (2 * parentIndex + 2);
     }
+
     private int getParentIndex(int childIndex)
     {
         return ((childIndex - 1) / 2);
@@ -29,10 +33,12 @@ public class Heap
     {
         return (getRightChildIndex(index) < size);
     }
+
     private boolean hasLeftChild(int index)
     {
         return (getLeftChildIndex(index) < size);
     }
+
     private boolean hasParent(int index)
     {
         return (getParentIndex(index) >= 0);
@@ -42,10 +48,12 @@ public class Heap
     {
         return items[getLeftChildIndex(index)];
     }
+
     private int rightChild(int index)
     {
         return items[getRightChildIndex(index)];
     }
+
     private int parent(int index)
     {
         return items[getParentIndex(index)];

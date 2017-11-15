@@ -1,3 +1,5 @@
+package dataStructures;
+
 /**
  * Created By Naseef M Abdus Sattar on 11/3/2017 at 9:13 PM
  */
@@ -56,6 +58,8 @@ public class QueueWithLinkedList
     }
 
     /**
+     * This method removes the node at the nth position. If
+     * Example:
      *
      * @param position
      * @return
@@ -106,7 +110,7 @@ public class QueueWithLinkedList
     }
 
     /**
-     * This method prints the data of the queue
+     * This method prints the data of the queue.
      */
 
     public void print()
@@ -139,16 +143,20 @@ public class QueueWithLinkedList
         ls.print();
         System.out.println("Size before deletion: "+ls.getSize());
 
-        System.out.println("Deleted Node's Data of Position 2 : "+ls.removeByPosition(2).getData());
+        System.out.println("Deleted dataStructures.Node's Data of Position 2 : "+ls.removeByPosition(2).getData());
 
         ls.print();
 
-        System.out.println("Deleted Node's Data of Position 4 : "+ls.removeByPosition(4).getData());
+        System.out.println("Deleted dataStructures.Node's Data of Position 4 : "+ls.removeByPosition(4).getData());
 
         ls.print();
-
 
         System.out.println("Size AFTER deletion: "+ls.getSize());
+
+        ls.add(7);
+        ls.print();
+
+        System.out.println("Size after ADDING 7: "+ls.getSize());
     }
 
 }

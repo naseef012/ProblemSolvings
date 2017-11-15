@@ -1,4 +1,4 @@
-/**
+package algorithms; /**
  * Created by USER on 8/2/2017.
  */
 

@@ -1,3 +1,5 @@
+package dataStructures;
+
 import java.util.NoSuchElementException;
 
 /**
@@ -101,11 +103,18 @@ public class LinkedListWithStack
             ls.push(i);
             i++;
         }
+
         ls.display();
         System.out.println("Size before deletion: "+ls.getSize());
+
         ls.delete(5);
         ls.display();
+
         System.out.println("Size AFTER deletion: "+ls.getSize());
+
+        ls.push(7);
+        ls.display();
+        System.out.println("Size after adding 7 is "+ls.getSize());
     }
 }
 
